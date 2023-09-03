@@ -1,0 +1,12 @@
+.userPostList {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  margin-bottom: 60px;
+}
+
+.messageBox {
+  display: flex;
+  gap: 12px;
+  color: var(--color-grey-3);
+}

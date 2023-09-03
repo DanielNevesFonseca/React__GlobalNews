@@ -1,0 +1,66 @@
+button, a{
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  font-family: var(--font-secondary);
+}
+
+.btn-sm,
+.btn-md,
+.btn-lg,
+.btn-outline,
+.btn-outline-md, .btn-delete {
+  min-width: fit-content;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-white);
+  transition: all ease-in-out .3s; 
+  
+  &:hover {
+    background-color: var(--color-primary-dark);
+  }
+}
+
+.btn-sm, .btn-delete {
+  padding: 6px 12px;
+}
+
+.btn-md {
+  padding: 12px 24px;
+}
+
+.btn-lg {
+  font-size: 1.125rem;
+  padding: 16px 32px;
+}
+
+.btn-outline, .btn-outline-md {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  padding: 6px 12px;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: all ease-in-out .3s;
+  }
+}
+
+.btn-outline-md{
+  padding: 12px 24px;
+}
+
+.btn-delete{
+  background-color: rgb(254, 0, 0, 0.7) ;
+  color: var(--color-white);
+  font-weight: 700;
+  transition: ease-in-out .3s;
+  
+  &:hover{
+    background-color:  rgb(254, 0, 0);
+  }
+}

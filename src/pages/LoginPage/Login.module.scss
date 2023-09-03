@@ -1,0 +1,32 @@
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 2rem 0 0 0;
+  width: 100%;
+  max-width: 108rem;
+  
+  .logo {
+    width: 100%;
+    max-width: 36.3125rem;
+    margin-top: 2rem;
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .logoContainer {
+      display: none;
+    }
+  }
+}

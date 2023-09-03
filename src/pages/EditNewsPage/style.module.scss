@@ -1,0 +1,70 @@
+.pageBack {
+  background-color: rgb(214, 214, 214);
+  display: flex;
+  justify-content: center;
+  min-width: calc(100dvw - 5px);
+
+  .alignPage {
+    max-width: 920px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 16px;
+
+    .titleAlign {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      gap: 16px;
+
+      @media (max-width:330px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      button {
+        background-color: inherit;
+
+        &:hover:has(span) {
+          span {
+            transition: all ease-in-out .3s;
+            color: var(--color-white);
+          }
+        }
+
+        &:hover {
+          background-color: var(--color-primary);
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      width: 100%;
+      gap: 10px;
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+      }
+
+      button {
+        width: 130px;
+      }
+    }
+  }
+}

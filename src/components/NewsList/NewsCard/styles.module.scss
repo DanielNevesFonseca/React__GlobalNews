@@ -1,0 +1,48 @@
+.userPost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 140px;
+  gap: 24px;
+}
+
+.infoBox {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+
+  &>img {
+    height: 138px;
+    object-fit: cover;
+    width: 158px;
+    min-width: 158px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    &>img {
+      height: 138px;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
+
+.buttonBox {
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  button {
+    color: var(--color-primary)
+  }
+}

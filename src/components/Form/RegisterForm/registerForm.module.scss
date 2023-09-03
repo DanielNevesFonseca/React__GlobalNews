@@ -1,0 +1,35 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  width: 100%;
+  max-width: 45.5rem;
+  padding-bottom: 50px;
+
+  span {
+    color: red;
+  }
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    &>button {
+      position: absolute;
+      bottom: 0;
+      right: 7px;
+    }
+
+    input {
+      max-width: 22rem;
+    }
+
+    div {
+      max-width: 22rem;
+      width: 100%;
+    }
+  }
+}

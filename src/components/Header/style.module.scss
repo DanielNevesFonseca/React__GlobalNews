@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  .logo {
+    width: 67px;
+    height: 31px;
+  }
+}
+
+.privateElementsBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userFirstLetterBox {
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+
+  @media (max-width:300px) {
+    display: none;
+  }
+
+  &>p {
+    color: var(--color-white);
+    font-weight: 700;
+  }
+}
