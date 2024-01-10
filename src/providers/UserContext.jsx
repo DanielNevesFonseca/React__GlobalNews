@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { kenzieFeedApi } from "../services/kenzieFeedApi";
+import { globalNewsApi } from "../services/globalNewsApi";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
 
   const userLogin = async (formData) => {
     try {
-      const { data } = await kenzieFeedApi.post("/login", formData);
+      const { data } = await globalNewsApi.post("/login", formData);
       localStorage.setItem("@KENZIE-FEED:TOKEN", data.accessToken);
       localStorage.setItem("@KENZIE-FEED:USERID", data.user.id);
       localStorage.setItem("@KENZIE-FEED:USERNAME", data.user.name);
@@ -28,7 +28,7 @@ export const UserProvider = ({ children }) => {
 
   const registerUser = async (formData) => {
     try {
-      await kenzieFeedApi.post("/users", formData);
+      await globalNewsApi.post("/users", formData);
       toast.success("Cadastro feito com sucesso!");
       setTimeout(() => {
         navigate("/login");

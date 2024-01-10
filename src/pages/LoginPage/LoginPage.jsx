@@ -14,7 +14,7 @@ export const LoginPage = () => {
           </figure>
         </section>
         <section className={style.formContainer}>
-          <h1 className="title2">Acesse o KenzieFeed</h1>
+          <h1 className="title2">Acesse o Global News</h1>
           <p className="text">
             Preencha os campos corretamente para fazer login
           </p>

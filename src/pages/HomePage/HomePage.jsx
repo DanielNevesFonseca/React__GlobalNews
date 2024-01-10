@@ -10,8 +10,8 @@ export const HomePage = () => {
       <main className="default-page">
         <section className={style.sectionGreeting}>
           <div className={style.box}>
-            <h3 className="text-sm">KENZIE FEED</h3>
-            <h1 className="title1">Seja muito bem vindo ao KenzieFeed</h1>
+            <h3 className="title3">GLOBAL NEWS</h3>
+            <h1 className="title1">Seja muito bem vindo ao Global News</h1>
             <p className="text">Fique por dentro das últimas notícias</p>
           </div>
           <img alt="banner" src={banner}></img>

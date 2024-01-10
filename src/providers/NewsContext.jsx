@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { kenzieFeedApi } from "../services/kenzieFeedApi";
+import { globalNewsApi } from "../services/globalNewsApi";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ export const NewsProvider = ({ children }) => {
   const { data: newsList } = useQuery({
     queryKey: ["news"],
     queryFn: async () => {
-      const { data } = await kenzieFeedApi.get("/posts?_embed=likes");
+      const { data } = await globalNewsApi.get("/posts?_embed=likes");
       return data;
     },
   });
@@ -35,7 +35,7 @@ export const NewsProvider = ({ children }) => {
 
   const getPost = async (postId) => {
     try {
-      const { data } = await kenzieFeedApi.get(`/posts/${postId}?_embed=likes`);
+      const { data } = await globalNewsApi.get(`/posts/${postId}?_embed=likes`);
       setShowNews(data);
       const responsePost = await data;
       return responsePost;
@@ -50,7 +50,7 @@ export const NewsProvider = ({ children }) => {
 
   const createNews = useMutation({
     mutationFn: async (formData) => {
-      return await kenzieFeedApi.post("/posts", formData, {
+      return await globalNewsApi.post("/posts", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -74,7 +74,7 @@ export const NewsProvider = ({ children }) => {
 
   const updateNews = useMutation({
     mutationFn: async (formData) => {
-      return await kenzieFeedApi.put(`/posts/${editingNews.id}`, formData, {
+      return await globalNewsApi.put(`/posts/${editingNews.id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -100,7 +100,7 @@ export const NewsProvider = ({ children }) => {
 
   const removeNews = useMutation({
     mutationFn: async (deletingId) => {
-      await kenzieFeedApi.delete(`/posts/${deletingId}`, {
+      await globalNewsApi.delete(`/posts/${deletingId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -125,7 +125,7 @@ export const NewsProvider = ({ children }) => {
 
   const addLike = useMutation({
     mutationFn: async (formData) => {
-      return await kenzieFeedApi.post("/likes", formData, {
+      return await globalNewsApi.post("/likes", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -139,7 +139,7 @@ export const NewsProvider = ({ children }) => {
 
   const removeLike = useMutation({
     mutationFn: async (likeId) => {
-      await kenzieFeedApi.delete(`/likes/${likeId}`, {
+      await globalNewsApi.delete(`/likes/${likeId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

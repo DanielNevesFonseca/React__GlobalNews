@@ -50,6 +50,11 @@ button, a{
   }
 }
 
+.btn-outline{
+  display: flex;
+  gap: 6px;
+}
+
 .btn-outline-md{
   padding: 12px 24px;
 }
